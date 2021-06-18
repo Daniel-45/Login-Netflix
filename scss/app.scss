@@ -56,7 +56,7 @@ body {
     font-size: .8rem;
 }
 
-input.invalid{
+input.invalid {
     border-bottom: 2px solid $secondary !important;
 }
 
@@ -167,6 +167,11 @@ form {
 
     @include tablet {
         padding-bottom: 0rem;
+    }
+
+    .facebook-logo {
+        color: #3b579d;
+        width: 1.4rem;
     }
 
     p,
