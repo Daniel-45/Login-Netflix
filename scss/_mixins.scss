@@ -1,0 +1,38 @@
+/** Media Queries **/
+@mixin mobile {
+    @media (min-width: #{$mobile}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin grid($columns, $space) {
+    display: grid;
+    gap: $space;
+    grid-template-columns: repeat($columns, 1fr);
+}
+
+@mixin box-sizing($box-model) {
+    box-sizing: $box-model;
+}
+
+@mixin button($bg-color, $color) {
+    color: $color;
+    background-color: $bg-color;
+    display: block;
+    text-align: center;
+    border: none;
+    border-radius: .2rem;
+    padding: .8rem 0;
+}

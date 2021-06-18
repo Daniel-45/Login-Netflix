@@ -1,0 +1,226 @@
+@import './normalize';
+@import './variables';
+@import './mixins';
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat.ttf");
+}
+
+/** General styles **/
+html {
+    @include box-sizing(border-box);
+}
+
+*,
+*:after,
+*:before {
+    @include box-sizing(inherit);
+}
+
+body {
+    font-family: $font;
+    color: $gray2;
+    background-color: $black;
+
+    @include tablet {
+        background-color: unset;
+        background-image: url(../images/bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom center;
+    }
+}
+
+.logo {
+    margin-top: 2rem;
+    margin-left: 22%;
+    max-width: 11.25rem;
+
+    @include tablet {
+        margin-top: .8rem;
+        margin-left: 2%;
+    }
+}
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.alert {
+    color: $secondary;
+    display: block;
+    margin-bottom: .8rem;
+    padding: .2rem;
+    font-size: .8rem;
+}
+
+input.invalid{
+    border-bottom: 2px solid $secondary !important;
+}
+
+a {
+    color: $gray2;
+    text-decoration: none;
+}
+
+/** Form **/
+.login-form {
+    margin: 1rem auto 4rem auto;
+    padding: 2rem 1rem;
+    max-width: 28.12rem;
+    background-color: rgba(0, 0, 0, 0.85);
+
+    @include tablet {
+        padding: 2rem 3rem;
+    }
+}
+
+form {
+    h1 {
+        color: $white;
+        font-size: 2rem;
+        margin: 2rem 0;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .field {
+        display: flex;
+        position: relative;
+        margin-bottom: .8rem;
+
+        span {
+            position: absolute;
+            top: 1.2rem;
+            right: 1rem;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        label {
+            position: absolute;
+            top: 1.2rem;
+            left: 1rem;
+            font-size: .9rem;
+            transition: font-size .3s ease, top .3s ease;
+
+            &.valid {
+                font-size: .7rem;
+                top: .5rem;
+            }
+        }
+
+        input {
+            flex: 1;
+            color: $white;
+            padding: 1.4rem 1rem .7rem 1rem;
+            border: none;
+            background-color: $gray1;
+            border-radius: .2rem;
+
+            &:focus {
+                background-color: $gray3;
+                outline: none;
+
+                +label {
+                    font-size: .7rem;
+                    top: .5rem;
+                }
+            }
+        }
+    }
+
+    .submit {
+        display: flex;
+        margin-top: 2rem;
+
+        button {
+            width: 100%;
+            @include button($primary, $white);
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1rem 0;
+        margin: .5rem 0 4rem 0;
+
+        label,
+        a {
+            font-size: .9rem;
+        }
+    }
+}
+
+.lower-content {
+    padding-bottom: 1rem;
+
+    @include tablet {
+        padding-bottom: 0rem;
+    }
+
+    p,
+    a {
+        font-size: .9rem;
+    }
+
+    .new-user {
+        margin-top: 1rem;
+        display: flex;
+
+        a {
+            color: $white;
+            margin-left: .6rem;
+        }
+    }
+}
+
+/** Footer **/
+.footer {
+    border-top: 1px solid $gray2;
+    padding: 2rem 0 4rem 0;
+
+    @include tablet {
+        border-top: unset;
+        background-color: rgba(0, 0, 0, 0.85);
+    }
+
+    .container {
+        @include tablet {
+            max-width: 50%;
+        }
+    }
+
+    .footer-menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        a {
+            flex: 0 0 auto;
+            font-size: .9rem;
+            padding: .6rem 0;
+        }
+    }
+
+    select {
+        // appearance: none;
+        padding: 1rem 2rem;
+        border: 1px solid $gray3;
+        border-radius: .2rem;
+        font-size: .8rem;
+        color: $gray2;
+        margin-top: 2rem;
+        background-color: transparent;
+    }
+}
